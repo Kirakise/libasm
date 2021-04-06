@@ -22,7 +22,7 @@ compar:
 	je lastcomp
 	add al, BYTE [rdi + rcx]
 	cmp BYTE [rsi + rcx], 0
-	je retle
+	je retgr
 	sub al, BYTE [rsi + rcx]
 	cmp al, 0
 	jg retgr
@@ -33,7 +33,7 @@ compar:
 lastcomp:
 	cmp BYTE [rsi + rcx], 0
 	je reteq
-	jne retgr
+	jne retle
 
 reteq:
 	xor rax, rax
